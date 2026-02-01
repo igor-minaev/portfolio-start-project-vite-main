@@ -5,7 +5,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 export const Main = () => {
     return (
         <StyledMain>
-            <FlexWrapper align="center" justify="space-around">
+            <FlexWrapper alignItem="center" justify="space-around">
                 <div>
                     <span>Hi There</span>
                     <Name>I am Ihar Minayeu</Name>
