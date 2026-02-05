@@ -1,6 +1,7 @@
 import {createGlobalStyle} from "styled-components";
+import {theme} from "./Theme.ts";
 
-export const GlobalStyled = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     *,
     *::before,
     *::after {
@@ -16,6 +17,7 @@ export const GlobalStyled = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        color: ${theme.colors.font}
     }
 
     a {
@@ -24,5 +26,18 @@ export const GlobalStyled = createGlobalStyle`
 
     ul {
         list-style-type: none;
+    }
+
+    button {
+        background-color: unset;
+        border: none;
+    }
+
+    section:nth-of-type(odd) {
+        background-color: ${theme.colors.primaryBg};
+    }
+
+    section:nth-of-type(even) {
+        background-color: ${theme.colors.secondaryBg};
     }
 `
