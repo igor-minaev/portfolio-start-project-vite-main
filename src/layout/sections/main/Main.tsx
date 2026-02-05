@@ -18,7 +18,7 @@ export const Main = () => {
 };
 
 // section or div
-const StyledMain = styled.div`
+const StyledMain = styled.section`
     min-height: 100vh;
     background-color: rgba(255, 253, 129, 0.82);
 `
