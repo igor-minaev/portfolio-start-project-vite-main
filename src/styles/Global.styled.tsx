@@ -33,11 +33,12 @@ export const GlobalStyle = createGlobalStyle`
         border: none;
     }
 
-    section:nth-of-type(odd) {
-        background-color: ${theme.colors.primaryBg};
-    }
+        section:nth-of-type(odd) {
+            background-color: ${theme.colors.primaryBg};
+        }
 
-    section:nth-of-type(even) {
-        background-color: ${theme.colors.secondaryBg};
-    }
-`
+        section:nth-of-type(even) {
+            background-color: ${theme.colors.secondaryBg};
+        }
+
+    // `
