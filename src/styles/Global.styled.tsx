@@ -17,7 +17,8 @@ export const GlobalStyle = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: ${theme.colors.font}
+        color: ${theme.colors.font};
+        line-height: 1.2;
     }
 
     a {
@@ -33,12 +34,12 @@ export const GlobalStyle = createGlobalStyle`
         border: none;
     }
 
-        section:nth-of-type(odd) {
-            background-color: ${theme.colors.primaryBg};
-        }
+    section:nth-of-type(odd) {
+        background-color: ${theme.colors.primaryBg};
+    }
 
-        section:nth-of-type(even) {
-            background-color: ${theme.colors.secondaryBg};
-        }
+    section:nth-of-type(even) {
+        background-color: ${theme.colors.secondaryBg};
+    }
 
     // `
