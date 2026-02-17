@@ -5,10 +5,10 @@ import {theme} from "../../../styles/Theme.ts";
 export const MobileMenu = (props: { headerMenuItems: Array<string> }) => {
     return (
         <StyledMobileMenu>
-            <BurgerButton isOpen={true}>
+            <BurgerButton isOpen={false}>
                 <span></span>
             </BurgerButton>
-            <MobileMenuPopup isOpen={true}>
+            <MobileMenuPopup isOpen={false}>
                 <ul>
                     {props.headerMenuItems.map((item, index) => (
                             <ListItem key={index}>
@@ -46,9 +46,9 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     bottom: 0;
     z-index: 99999;
     background-color: rgba(31, 31, 32, 0.9);
-    display:none;
+    display: none;
 
-    ${props=>props.isOpen && css<{ isOpen: boolean }>`
+    ${props => props.isOpen && css<{ isOpen: boolean }>`
         display: flex;
         justify-content: center;
         align-items: center;
