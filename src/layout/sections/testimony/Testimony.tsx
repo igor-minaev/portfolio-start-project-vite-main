@@ -4,24 +4,27 @@ import {Icon} from "../../../components/icon/Icon.tsx";
 import {Slider} from "../../../components/slider/Slider.tsx";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {IconWrapper} from "../skills/skill/Skill.tsx";
+import {Container} from "../../../components/Container.tsx";
 
 export const Testimony = () => {
     return (
         <StyledTestimony>
-            <SectionTitle>Testimony</SectionTitle>
-            <FlexWrapper direction="column" alignItem="center">
-                <IconWrapper>
-                    <Icon iconId="quote"/>
-                </IconWrapper>
-                <Slider/>
-            </FlexWrapper>
+            <Container>
+                <SectionTitle>Testimony</SectionTitle>
+                <FlexWrapper direction="column" alignItem="center">
+                    <IconWrapper>
+                        <Icon iconId="quote"/>
+                    </IconWrapper>
+                    <Slider/>
+                </FlexWrapper>
+            </Container>
         </StyledTestimony>
     );
 };
 
 const StyledTestimony = styled.section`
-    ${IconWrapper}{
-        margin:33px 0 72px;
+    ${IconWrapper} {
+        margin: 33px 0 72px;
     }
 
 `
