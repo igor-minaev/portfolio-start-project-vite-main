@@ -1,50 +1,72 @@
-import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {Skill} from "./skill/Skill.tsx";
 import {Container} from "../../../components/Container.tsx";
+import React from "react";
+import {S} from './Skills_Styles.ts'
 
-export const Skills = () => {
+type SkillItem = {
+    id: string
+    iconId: string
+    title: string
+    description: string
+}
+const skillItems: Array<SkillItem> = [
+    {
+        id: crypto.randomUUID(),
+        iconId: "code",
+        title: "html5",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+    },
+    {
+        id: crypto.randomUUID(),
+        iconId: "css",
+        title: "css3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+    },
+    {
+        id: crypto.randomUUID(),
+        iconId: "react",
+        title: "React",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+    },
+    {
+        id: crypto.randomUUID(),
+        iconId: "typescript",
+        title: "typescript",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+    },
+    {
+        id: crypto.randomUUID(),
+        iconId: "styledComponents",
+        title: "styled components",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+    },
+    {
+        id: crypto.randomUUID(),
+        iconId: "figma",
+        title: "web design",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+    }
+]
+
+
+export const Skills: React.FC = () => {
     return (
-        <StyledSkills>
+        <S.Skills>
             <Container>
                 <SectionTitle>My Skills</SectionTitle>
                 <FlexWrapper wrap="wrap" justify="space-between">
-                    <Skill
-                        iconId={"code"}
-                        title="html5"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"/>
-                    <Skill
-                        iconId="css"
-                        title="css3"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-                    />
-                    <Skill
-                        iconId="react"
-                        title="React"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-                    />
-                    <Skill
-                        iconId="typescript"
-                        title="typescript"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-                    />
-                    <Skill
-                        iconId="styledComponents"
-                        title="styled components"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-                    />
-                    <Skill
-                        iconId="figma"
-                        title="web design"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-                    />
+                    {skillItems.map(s => (
+                        <Skill key={s.id}
+                               iconId={s.iconId}
+                               title={s.title}
+                               description={s.description}/>
+                    ))}
                 </FlexWrapper>
             </Container>
-        </StyledSkills>
+        </S.Skills>
     );
 };
 
-const StyledSkills = styled.section`
-    background-color: #ffaed2;
-`
+
