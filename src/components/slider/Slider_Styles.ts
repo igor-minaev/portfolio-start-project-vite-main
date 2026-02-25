@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {theme} from "../../styles/Theme.ts";
 
 const Slider = styled.div`
     max-width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,25 +22,6 @@ const Name = styled.span`
     text-transform: uppercase;
     margin: 22px 0 35px;
     display: inline-block;
-`
-
-const Pagination = styled.div`
-    span {
-        display: inline-block;
-        border-radius: 20px;
-        width: 7px;
-        height: 7px;
-        background: rgba(255, 255, 255, 0.5);
-
-        & + span {
-            margin-left: 5px;
-        }
-
-        &.active {
-            width: 20px;
-            background-color: ${theme.colors.accent};
-        }
-    }
 `
 
 export const S = {
