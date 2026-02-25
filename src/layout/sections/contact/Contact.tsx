@@ -1,63 +1,24 @@
-import styled from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {Button} from "../../../components/Button.tsx";
 import {Container} from "../../../components/Container.tsx";
-import {theme} from "../../../styles/Theme.ts";
+import React from "react";
+import {S} from './Contacts_Styles.ts'
 
-export const Contact = () => {
+export const Contact:React.FC = () => {
     return (
-        <StyledContact>
+        <S.Contact>
             <Container>
                 <SectionTitle>Contact</SectionTitle>
-                <StyledForm>
-                    <Field placeholder="name"></Field>
-                    <Field placeholder="subject"></Field>
-                    <Field placeholder="message" as="textarea"></Field>
+                <S.Form>
+                    <S.Field placeholder="name"></S.Field>
+                    <S.Field placeholder="subject"></S.Field>
+                    <S.Field placeholder="message" as="textarea"></S.Field>
                     <Button type="submit">Send message</Button>
-                </StyledForm>
+                </S.Form>
             </Container>
-        </StyledContact>
+        </S.Contact>
     );
 };
 
-const StyledContact = styled.section`
 
-`
-
-const StyledForm = styled.form`
-    max-width: 540px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    margin: 0 auto;
-
-    textarea {
-        resize: none;
-        height: 155px;
-    }
-`
-
-const Field = styled.input`
-    width: 100%;
-    border: 1px solid ${theme.colors.borderColor};
-    background-color: ${theme.colors.secondaryBg};
-    padding: 7px 15px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 0.05em;
-    color: ${theme.colors.font};
-
-    &::placeholder {
-        color: ${theme.colors.placeholderColor};
-        text-transform: capitalize;
-    }
-
-    &:focus-visible {
-        outline: 1px solid ${theme.colors.borderColor};
-    }
-
-`
 
