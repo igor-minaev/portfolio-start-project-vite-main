@@ -7,9 +7,9 @@ import timerImg from "../../../assets/images/proj-2.png"
 import {Container} from "../../../components/Container.ts";
 import React, {useState} from "react";
 import {S} from './Works_Styles.ts'
+import {motion, AnimatePresence} from "motion/react"
 
-
-const tabsItems: Array<{ title: string, status: TabsStatusType}> = [
+const tabsItems: Array<{ title: string, status: TabsStatusType }> = [
     {
         title: "All",
         status: "all"
@@ -59,12 +59,20 @@ export const Works: React.FC = () => {
                 <SectionTitle>My Works</SectionTitle>
                 <TabMenu tabsItems={tabsItems} changeFilterStatus={changeFilterStatus} currentFilterStatus={currentFilterStatus}/>
                 <FlexWrapper justify="space-between" alignItem="flex-start" wrap="wrap">
-                    {filteredWorks.map(w => (
-                        <Work key={w.id}
-                              src={w.src}
-                              title={w.title}
-                              description={w.description}/>
-                    ))}
+                    <AnimatePresence>
+                        {filteredWorks.map(w => (
+                            <motion.div key={w.id} style={{width: '330px', flexGrow: 1, maxWidth: '540px'}}
+                                        layout
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        exit={{opacity: 0}}>
+                                <Work key={w.id}
+                                      src={w.src}
+                                      title={w.title}
+                                      description={w.description}/>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
                 </FlexWrapper>
             </Container>
         </S.Works>
