@@ -4,6 +4,7 @@ import {Skill} from "./skill/Skill.tsx";
 import {Container} from "../../../components/Container.ts";
 import React from "react";
 import {S} from './Skills_Styles.ts'
+import {Fade} from "react-awesome-reveal";
 
 type SkillItem = {
     id: string
@@ -57,12 +58,14 @@ export const Skills: React.FC = () => {
             <Container>
                 <SectionTitle>My Skills</SectionTitle>
                 <FlexWrapper wrap="wrap" justify="space-between">
-                    {skillItems.map(s => (
-                        <Skill key={s.id}
-                               iconId={s.iconId}
-                               title={s.title}
-                               description={s.description}/>
-                    ))}
+                    <Fade cascade damping={0.2}>
+                        {skillItems.map(s => (
+                            <Skill key={s.id}
+                                   iconId={s.iconId}
+                                   title={s.title}
+                                   description={s.description}/>
+                        ))}
+                    </Fade>
                 </FlexWrapper>
             </Container>
         </S.Skills>
